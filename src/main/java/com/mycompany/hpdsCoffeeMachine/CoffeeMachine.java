@@ -13,12 +13,42 @@ public class CoffeeMachine {
     private MixingTank mixingTank2 = new MixingTank("heatTank",0);
 
     private ArrayValve arrayValve= new ArrayValve();
+    private SugarSelector sugarSelector = new SugarSelector();
+
+    public Tank getWaterTank() {
+        return waterTank;
+    }
+
+    public Tank getCoffeeTank() {
+        return coffeeTank;
+    }
+
+    public Tank getSugarTank() {
+        return sugarTank;
+    }
+
+    public Tank getMilkTank() {
+        return milkTank;
+    }
+
+    public SugarSelector getSugarSelector() {
+        return sugarSelector;
+    }
 
     public void prepareProduct(Product product){
         if(product == Product.COFFEE_EXPRESS) prepareProductCoffeeExpress();
     }
 
     private void prepareProductCoffeeExpress(){
+        int levelWaterTank = waterTank.getLevelTankStub();
+        int levelCoffeeTank = coffeeTank.getLevelTankStub();
+        int levelSugarTank = sugarTank.getLevelTankStub();
+        int levelSugarSelected = sugarSelector.getLevelSugarSelected();
 
+        if (levelCoffeeTank >= 1 && levelWaterTank >= 1 && levelSugarTank >= levelSugarSelected){
+
+        }
+
+        mixingTank2.ejectContent();
     }
 }

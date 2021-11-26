@@ -3,6 +3,7 @@ package com.mycompany.hpdsCoffeeMachine;
 public class Tank {
     private final String name;
     private int numberUnitsBaseProduct;
+    private Sensor sensorLevelProduct;
 
     public Tank(String name, int numberUnitsBaseProduct) {
         this.name = name;
@@ -19,7 +20,12 @@ public class Tank {
     }
 
     // Stub del Sensor del Tank
-    public int getLevelTank(){
+    public int getLevelTankStub(){
         return this.numberUnitsBaseProduct;
+    }
+
+    // Mock del Sensor del Tank
+    public int getLevelTankMock(){
+        return sensorLevelProduct.getValue();
     }
 }
